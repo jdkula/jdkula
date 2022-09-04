@@ -1,8 +1,8 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import Script from 'next/script';
-const Home: NextPage<{ resume: object }> = ({ resume }) => {
+
+const Home: NextPage<{ resume: any }> = ({ resume }) => {
     return (
         <>
             <Head>
@@ -20,13 +20,9 @@ const Home: NextPage<{ resume: object }> = ({ resume }) => {
                         <Image src="/images/avatar.jpg" alt="" layout="fill" />
                     </span>
                     <h1 id="logo">
-                        <a href="#">Willis Corto</a>
+                        <a href="#">{resume.basics.name}</a>
                     </h1>
-                    <p>
-                        I got reprogrammed by a rogue AI
-                        <br />
-                        and now I’m totally cray
-                    </p>
+                    <p>{resume.basics.summary}</p>
                 </header>
                 <nav id="nav">
                     <ul>
@@ -43,6 +39,17 @@ const Home: NextPage<{ resume: object }> = ({ resume }) => {
                         </li>
                         <li>
                             <a href="#four">Contact</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/generated/resume.pdf"
+                                data-skip="true"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Resume{' '}
+                                <i className="icon solid fa-external-link"></i>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -85,7 +92,7 @@ const Home: NextPage<{ resume: object }> = ({ resume }) => {
                     <section id="one">
                         <div className="image main" data-position="center">
                             <Image
-                                src="images/banner.jpg"
+                                src="/images/banner.jpg"
                                 alt=""
                                 layout="fill"
                             />
@@ -630,14 +637,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 </section>
             </div>
 
-            {/* Scripts */}
-            <Script src="assets/js/jquery.min.js"></Script>
-            <Script src="assets/js/jquery.scrollex.min.js"></Script>
-            <Script src="assets/js/jquery.scrolly.min.js"></Script>
-            <Script src="assets/js/browser.min.js"></Script>
-            <Script src="assets/js/breakpoints.min.js"></Script>
-            <Script src="assets/js/util.js"></Script>
-            <Script src="assets/js/main.js"></Script>
+            {/* script defers */}
+            <script defer src="assets/js/jquery.min.js"></script>
+            <script defer src="assets/js/jquery.scrollex.min.js"></script>
+            <script defer src="assets/js/jquery.scrolly.min.js"></script>
+            <script defer src="assets/js/browser.min.js"></script>
+            <script defer src="assets/js/breakpoints.min.js"></script>
+            <script defer src="assets/js/util.js"></script>
+            <script defer src="assets/js/main.js"></script>
         </>
     );
 };

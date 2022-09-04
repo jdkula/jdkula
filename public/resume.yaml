@@ -2,7 +2,7 @@ $schema: https://raw.githubusercontent.com/jsonresume/resume-schema/master/schem
 basics:
   name: Jonathan Kula
   label: MSCS @ Stanford
-  image: ""
+  picture: "https://avatars.githubusercontent.com/u/4166625?v=4"
   email: jonathan@jdkula.dev
   phone: "(909) 373-6583"
   url: https://jdkula.dev
