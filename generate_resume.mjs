@@ -7,6 +7,9 @@ import tslog from 'tslog';
 
 const log = new tslog.Logger({ displayFunctionName: false });
 
+log.info('Creating output directory...');
+await fs.mkdir('./public/generated', { recursive: true });
+
 log.info('Loading resume...');
 const resume = yaml.load(await fs.readFile('./public/resume.yaml', 'utf-8'));
 
