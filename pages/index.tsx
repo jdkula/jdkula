@@ -1,264 +1,291 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Script from "next/script";
-
-const Home: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>Read Only by HTML5 UP</title>
-        <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no"
-        />
-      </Head>
-      {/* Header */}
-      <section id="header">
-        <header>
-          <span className="image avatar">
-            <Image src="/images/avatar.jpg" alt="" layout="fill" />
-          </span>
-          <h1 id="logo">
-            <a href="#">Willis Corto</a>
-          </h1>
-          <p>
-            I got reprogrammed by a rogue AI
-            <br />
-            and now I’m totally cray
-          </p>
-        </header>
-        <nav id="nav">
-          <ul>
-            <li>
-              <a href="#one" className="active">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#two">Things I Can Do</a>
-            </li>
-            <li>
-              <a href="#three">A Few Accomplishments</a>
-            </li>
-            <li>
-              <a href="#four">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <footer>
-          <ul className="icons">
-            <li>
-              <a href="#" className="icon brands fa-twitter">
-                <span className="label">Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon brands fa-facebook-f">
-                <span className="label">Facebook</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon brands fa-instagram">
-                <span className="label">Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon brands fa-github">
-                <span className="label">Github</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon solid fa-envelope">
-                <span className="label">Email</span>
-              </a>
-            </li>
-          </ul>
-        </footer>
-      </section>
-
-      {/* Wrapper */}
-      <div id="wrapper">
-        {/* Main */}
-        <div id="main">
-          {/* One */}
-          <section id="one">
-            <div className="image main" data-position="center">
-              <Image src="images/banner.jpg" alt="" layout="fill" />
-            </div>
-            <div className="container">
-              <header className="major">
-                <h2>Read Only</h2>
-                <p>
-                  Just an incredibly simple responsive site
-                  <br />
-                  template freebie by <a href="http://html5up.net">HTML5 UP</a>.
-                </p>
-              </header>
-              <p>
-                Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus
-                col. Commodo id in arcu ante lorem ipsum sed accumsan erat
-                praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo.
-                Vis aliquet tortor ultricies non ante erat nunc integer eu ante
-                ornare amet commetus vestibulum blandit integer in curae ac
-                faucibus integer non. Adipiscing cubilia elementum.
-              </p>
-            </div>
-          </section>
-
-          {/* Two */}
-          <section id="two">
-            <div className="container">
-              <h3>Things I Can Do</h3>
-              <p>
-                Integer eu ante ornare amet commetus vestibulum blandit integer
-                in curae ac faucibus integer non. Adipiscing cubilia elementum
-                integer lorem ipsum dolor sit amet.
-              </p>
-              <ul className="feature-icons">
-                <li className="icon solid fa-code">Write all the code</li>
-                <li className="icon solid fa-cubes">Stack small boxes</li>
-                <li className="icon solid fa-book">Read books and stuff</li>
-                <li className="icon solid fa-coffee">Drink much coffee</li>
-                <li className="icon solid fa-bolt">Lightning bolt</li>
-                <li className="icon solid fa-users">Shadow clone technique</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Three */}
-          <section id="three">
-            <div className="container">
-              <h3>A Few Accomplishments</h3>
-              <p>
-                Integer eu ante ornare amet commetus vestibulum blandit integer
-                in curae ac faucibus integer non. Adipiscing cubilia elementum
-                integer. Integer eu ante ornare amet commetus.
-              </p>
-              <div className="features">
-                <article>
-                  <a href="#" className="image">
-                    <Image
-                      src="/images/pic01.jpg"
-                      alt=""
-                      width={400}
-                      height={400}
-                    />
-                  </a>
-                  <div className="inner">
-                    <h4>Possibly broke spacetime</h4>
+import type { GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import Script from 'next/script';
+const Home: NextPage<{ resume: object }> = ({ resume }) => {
+    return (
+        <>
+            <Head>
+                <title>Read Only by HTML5 UP</title>
+                <meta charSet="utf-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, user-scalable=no"
+                />
+            </Head>
+            {/* Header */}
+            <section id="header">
+                <header>
+                    <span className="image avatar">
+                        <Image src="/images/avatar.jpg" alt="" layout="fill" />
+                    </span>
+                    <h1 id="logo">
+                        <a href="#">Willis Corto</a>
+                    </h1>
                     <p>
-                      Integer eu ante ornare amet commetus vestibulum blandit
-                      integer in curae ac faucibus integer adipiscing ornare
-                      amet.
+                        I got reprogrammed by a rogue AI
+                        <br />
+                        and now I’m totally cray
                     </p>
-                  </div>
-                </article>
-                <article>
-                  <a href="#" className="image">
-                    <Image
-                      src="/images/pic02.jpg"
-                      alt=""
-                      width={400}
-                      height={400}
-                    />
-                  </a>
-                  <div className="inner">
-                    <h4>Terraformed a small moon</h4>
-                    <p>
-                      Integer eu ante ornare amet commetus vestibulum blandit
-                      integer in curae ac faucibus integer adipiscing ornare
-                      amet.
-                    </p>
-                  </div>
-                </article>
-                <article>
-                  <a href="#" className="image">
-                    <Image
-                      src="/images/pic03.jpg"
-                      alt=""
-                      width={400}
-                      height={400}
-                    />
-                  </a>
-                  <div className="inner">
-                    <h4>Snapped dark matter in the wild</h4>
-                    <p>
-                      Integer eu ante ornare amet commetus vestibulum blandit
-                      integer in curae ac faucibus integer adipiscing ornare
-                      amet.
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </section>
-
-          {/* Four */}
-          <section id="four">
-            <div className="container">
-              <h3>Contact Me</h3>
-              <p>
-                Integer eu ante ornare amet commetus vestibulum blandit integer
-                in curae ac faucibus integer non. Adipiscing cubilia elementum
-                integer. Integer eu ante ornare amet commetus.
-              </p>
-              <form method="post" action="#">
-                <div className="row gtr-uniform">
-                  <div className="col-6 col-12-xsmall">
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="Name"
-                    />
-                  </div>
-                  <div className="col-6 col-12-xsmall">
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div className="col-12">
-                    <input
-                      type="text"
-                      name="subject"
-                      id="subject"
-                      placeholder="Subject"
-                    />
-                  </div>
-                  <div className="col-12">
-                    <textarea
-                      name="message"
-                      id="message"
-                      placeholder="Message"
-                      rows={6}
-                    ></textarea>
-                  </div>
-                  <div className="col-12">
-                    <ul className="actions">
-                      <li>
-                        <input
-                          type="submit"
-                          className="primary"
-                          value="Send Message"
-                        />
-                      </li>
-                      <li>
-                        <input type="reset" value="Reset Form" />
-                      </li>
+                </header>
+                <nav id="nav">
+                    <ul>
+                        <li>
+                            <a href="#one" className="active">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#two">Things I Can Do</a>
+                        </li>
+                        <li>
+                            <a href="#three">A Few Accomplishments</a>
+                        </li>
+                        <li>
+                            <a href="#four">Contact</a>
+                        </li>
                     </ul>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </section>
+                </nav>
+                <footer>
+                    <ul className="icons">
+                        <li>
+                            <a href="#" className="icon brands fa-twitter">
+                                <span className="label">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="icon brands fa-facebook-f">
+                                <span className="label">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="icon brands fa-instagram">
+                                <span className="label">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="icon brands fa-github">
+                                <span className="label">Github</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="icon solid fa-envelope">
+                                <span className="label">Email</span>
+                            </a>
+                        </li>
+                    </ul>
+                </footer>
+            </section>
 
-          {/* Five */}
-          {/*
+            {/* Wrapper */}
+            <div id="wrapper">
+                {/* Main */}
+                <div id="main">
+                    {/* One */}
+                    <section id="one">
+                        <div className="image main" data-position="center">
+                            <Image
+                                src="images/banner.jpg"
+                                alt=""
+                                layout="fill"
+                            />
+                        </div>
+                        <div className="container">
+                            <header className="major">
+                                <h2>Read Only</h2>
+                                <p>
+                                    Just an incredibly simple responsive site
+                                    <br />
+                                    template freebie by{' '}
+                                    <a href="http://html5up.net">HTML5 UP</a>.
+                                </p>
+                            </header>
+                            <p>
+                                Faucibus sed lobortis aliquam lorem blandit.
+                                Lorem eu nunc metus col. Commodo id in arcu ante
+                                lorem ipsum sed accumsan erat praesent faucibus
+                                commodo ac mi lacus. Adipiscing mi ac commodo.
+                                Vis aliquet tortor ultricies non ante erat nunc
+                                integer eu ante ornare amet commetus vestibulum
+                                blandit integer in curae ac faucibus integer
+                                non. Adipiscing cubilia elementum.
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* Two */}
+                    <section id="two">
+                        <div className="container">
+                            <h3>Things I Can Do</h3>
+                            <p>
+                                Integer eu ante ornare amet commetus vestibulum
+                                blandit integer in curae ac faucibus integer
+                                non. Adipiscing cubilia elementum integer lorem
+                                ipsum dolor sit amet.
+                            </p>
+                            <ul className="feature-icons">
+                                <li className="icon solid fa-code">
+                                    Write all the code
+                                </li>
+                                <li className="icon solid fa-cubes">
+                                    Stack small boxes
+                                </li>
+                                <li className="icon solid fa-book">
+                                    Read books and stuff
+                                </li>
+                                <li className="icon solid fa-coffee">
+                                    Drink much coffee
+                                </li>
+                                <li className="icon solid fa-bolt">
+                                    Lightning bolt
+                                </li>
+                                <li className="icon solid fa-users">
+                                    Shadow clone technique
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    {/* Three */}
+                    <section id="three">
+                        <div className="container">
+                            <h3>A Few Accomplishments</h3>
+                            <p>
+                                Integer eu ante ornare amet commetus vestibulum
+                                blandit integer in curae ac faucibus integer
+                                non. Adipiscing cubilia elementum integer.
+                                Integer eu ante ornare amet commetus.
+                            </p>
+                            <div className="features">
+                                <article>
+                                    <a href="#" className="image">
+                                        <Image
+                                            src="/images/pic01.jpg"
+                                            alt=""
+                                            width={400}
+                                            height={400}
+                                        />
+                                    </a>
+                                    <div className="inner">
+                                        <h4>Possibly broke spacetime</h4>
+                                        <p>
+                                            Integer eu ante ornare amet commetus
+                                            vestibulum blandit integer in curae
+                                            ac faucibus integer adipiscing
+                                            ornare amet.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <a href="#" className="image">
+                                        <Image
+                                            src="/images/pic02.jpg"
+                                            alt=""
+                                            width={400}
+                                            height={400}
+                                        />
+                                    </a>
+                                    <div className="inner">
+                                        <h4>Terraformed a small moon</h4>
+                                        <p>
+                                            Integer eu ante ornare amet commetus
+                                            vestibulum blandit integer in curae
+                                            ac faucibus integer adipiscing
+                                            ornare amet.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <a href="#" className="image">
+                                        <Image
+                                            src="/images/pic03.jpg"
+                                            alt=""
+                                            width={400}
+                                            height={400}
+                                        />
+                                    </a>
+                                    <div className="inner">
+                                        <h4>Snapped dark matter in the wild</h4>
+                                        <p>
+                                            Integer eu ante ornare amet commetus
+                                            vestibulum blandit integer in curae
+                                            ac faucibus integer adipiscing
+                                            ornare amet.
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Four */}
+                    <section id="four">
+                        <div className="container">
+                            <h3>Contact Me</h3>
+                            <p>
+                                Integer eu ante ornare amet commetus vestibulum
+                                blandit integer in curae ac faucibus integer
+                                non. Adipiscing cubilia elementum integer.
+                                Integer eu ante ornare amet commetus.
+                            </p>
+                            <form method="post" action="#">
+                                <div className="row gtr-uniform">
+                                    <div className="col-6 col-12-xsmall">
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            id="name"
+                                            placeholder="Name"
+                                        />
+                                    </div>
+                                    <div className="col-6 col-12-xsmall">
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            placeholder="Email"
+                                        />
+                                    </div>
+                                    <div className="col-12">
+                                        <input
+                                            type="text"
+                                            name="subject"
+                                            id="subject"
+                                            placeholder="Subject"
+                                        />
+                                    </div>
+                                    <div className="col-12">
+                                        <textarea
+                                            name="message"
+                                            id="message"
+                                            placeholder="Message"
+                                            rows={6}
+                                        ></textarea>
+                                    </div>
+                                    <div className="col-12">
+                                        <ul className="actions">
+                                            <li>
+                                                <input
+                                                    type="submit"
+                                                    className="primary"
+                                                    value="Send Message"
+                                                />
+                                            </li>
+                                            <li>
+                                                <input
+                                                    type="reset"
+                                                    value="Reset Form"
+                                                />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                    {/* Five */}
+                    {/*
 							<section id="five">
 								<div className="container">
 									<h3>Elements</h3>
@@ -587,31 +614,44 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 								</div>
 							</section>
 						*/}
-        </div>
+                </div>
 
-        {/* Footer */}
-        <section id="footer">
-          <div className="container">
-            <ul className="copyright">
-              <li>&copy; Untitled. All rights reserved.</li>
-              <li>
-                Design: <a href="http://html5up.net">HTML5 UP</a>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </div>
+                {/* Footer */}
+                <section id="footer">
+                    <div className="container">
+                        <ul className="copyright">
+                            <li>&copy; Untitled. All rights reserved.</li>
+                            <li>
+                                Design:{' '}
+                                <a href="http://html5up.net">HTML5 UP</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
 
-      {/* Scripts */}
-      <Script src="assets/js/jquery.min.js"></Script>
-      <Script src="assets/js/jquery.scrollex.min.js"></Script>
-      <Script src="assets/js/jquery.scrolly.min.js"></Script>
-      <Script src="assets/js/browser.min.js"></Script>
-      <Script src="assets/js/breakpoints.min.js"></Script>
-      <Script src="assets/js/util.js"></Script>
-      <Script src="assets/js/main.js"></Script>
-    </>
-  );
+            {/* Scripts */}
+            <Script src="assets/js/jquery.min.js"></Script>
+            <Script src="assets/js/jquery.scrollex.min.js"></Script>
+            <Script src="assets/js/jquery.scrolly.min.js"></Script>
+            <Script src="assets/js/browser.min.js"></Script>
+            <Script src="assets/js/breakpoints.min.js"></Script>
+            <Script src="assets/js/util.js"></Script>
+            <Script src="assets/js/main.js"></Script>
+        </>
+    );
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    const yaml = await import('js-yaml');
+    const resume = (await import('~/public/resume.yaml')).default;
+    return {
+        props: {
+            resume: JSON.parse(
+                JSON.stringify(yaml.load(resume, { json: true }))
+            ),
+        },
+    };
+};

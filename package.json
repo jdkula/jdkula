@@ -1,35 +1,38 @@
 {
-  "name": "jdkula",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "concurrently \"yarn:next build\" \"yarn:build-resume\"",
-    "build-resume": "node ./generate_resume.mjs",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "yarn build && next export"
-  },
-  "dependencies": {
-    "js-yaml": "^4.1.0",
-    "jsonresume-theme-caffeine": "^1.2.3",
-    "next": "12.2.5",
-    "puppeteer": "^17.1.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "resume-schema": "^1.0.0",
-    "resumed": "^1.0.3",
-    "tslog": "^3.3.4"
-  },
-  "devDependencies": {
-    "@types/node": "18.7.14",
-    "@types/react": "18.0.18",
-    "@types/react-dom": "18.0.6",
-    "concurrently": "^7.3.0",
-    "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5",
-    "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.7.1",
-    "typescript": "4.8.2"
-  }
+    "name": "jdkula",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "concurrently \"yarn:next dev\" \"yarn:watch-resume\"",
+        "watch-resume": "nodemon --watch public -e mjs,yaml,yml ./generate_resume.mjs",
+        "build": "yarn build-resume && next build",
+        "build-resume": "node ./generate_resume.mjs",
+        "start": "next start",
+        "lint": "next lint",
+        "export": "yarn build && next export"
+    },
+    "dependencies": {
+        "js-yaml": "^4.1.0",
+        "jsonresume-theme-caffeine": "^1.2.3",
+        "next": "12.2.5",
+        "puppeteer": "^17.1.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "resume-schema": "^1.0.0",
+        "resumed": "^1.0.3",
+        "tslog": "^3.3.4"
+    },
+    "devDependencies": {
+        "@types/js-yaml": "^4.0.5",
+        "@types/node": "18.7.14",
+        "@types/react": "18.0.18",
+        "@types/react-dom": "18.0.6",
+        "concurrently": "^7.3.0",
+        "eslint": "8.23.0",
+        "eslint-config-next": "12.2.5",
+        "eslint-config-prettier": "^8.5.0",
+        "nodemon": "^2.0.19",
+        "prettier": "^2.7.1",
+        "typescript": "4.8.2"
+    }
 }

@@ -10,6 +10,9 @@ const log = new tslog.Logger({ displayFunctionName: false });
 log.info('Loading resume...');
 const resume = yaml.load(await fs.readFile('./public/resume.yaml', 'utf-8'));
 
+log.info('Saving json...');
+await fs.writeFile('./public/generated/resume.json', JSON.stringify(resume));
+
 log.info('Rendering resume...');
 const html = await render(resume, theme);
 
@@ -23,10 +26,10 @@ await page.setContent(html, { waitUntil: 'networkidle0' });
 
 log.info('Exporting PDF...');
 await page.pdf({
-    path: './public/resume.pdf',
+    path: './public/generated/resume.pdf',
     format: 'letter',
     printBackground: true,
 });
 await browser.close();
 
-log.info('Success! Resume exported to ./public/resume.pdf');
+log.info('Success! Resume exported to ./public/generated/resume.pdf');
