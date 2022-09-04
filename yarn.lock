@@ -1198,7 +1198,16 @@ handlebars@1.x:
   optionalDependencies:
     uglify-js "~2.3"
 
-handlebars@^4.0.5:
+handlebars@^2.0.0-alpha.4:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-2.0.0.tgz#6e9d7f8514a3467fa5e9f82cc158ecfc1d5ac76f"
+  integrity sha512-OdfkaA0M8qGD5EJBkMw3TpguSWl6lz94jdyVmYs5e4TpwepZJ35Y5XlchsIwcN7NP/yzNa3MJYd/dRTO7Nf/fg==
+  dependencies:
+    optimist "~0.3"
+  optionalDependencies:
+    uglify-js "~2.3"
+
+handlebars@^4.0.5, handlebars@^4.7.7:
   version "4.7.7"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.7.tgz#9ce33416aad02dbd6c8fafa8240d5d98004945a1"
   integrity sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==
@@ -1472,6 +1481,28 @@ jsonresume-theme-caffeine@^1.2.3:
     moment "^2.17.1"
     swag "^0.7.0"
 
+jsonresume-theme-flat@^0.3.7:
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/jsonresume-theme-flat/-/jsonresume-theme-flat-0.3.7.tgz#a264f00d6c5850dd7c4b5c15d64204d213a85552"
+  integrity sha512-sdDkJdmMR4hqV/z/acBQCEWmzUlmsg74F97+aeH7KMhRRipB7j8GO2XKZxK9Zb+lh3ewZ7kmlo5/AX+mvTYcig==
+  dependencies:
+    handlebars "^2.0.0-alpha.4"
+
+jsonresume-theme-short@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/jsonresume-theme-short/-/jsonresume-theme-short-0.1.7.tgz#fbb914d8b07157a8df4af93e57560af0c5f507a3"
+  integrity sha512-ZEuXWAAh9T0nPrCjJLlGUL8QbCYJAEfF3XheQ2elMGolDZpSz1nY5TPJxoMSyIBurKNs9gdQFh+cD42wySH5gg==
+  dependencies:
+    handlebars "^2.0.0-alpha.4"
+
+jsonresume-theme-stackoverflow@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/jsonresume-theme-stackoverflow/-/jsonresume-theme-stackoverflow-2.0.0.tgz#c335f6799343b3a79767d045b8921e4c8d72afbc"
+  integrity sha512-SsKzZPodhgT9by3osxOUa6GfFBMxVzuMWhoOAbGWppEY1fPJ2PgwVbgdFX0flgUugQNz1+ypCdu/5zjs9Tz0bg==
+  dependencies:
+    handlebars "^4.7.7"
+    moment "^2.29.2"
+
 "jsx-ast-utils@^2.4.1 || ^3.0.0", jsx-ast-utils@^3.3.2:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-3.3.3.tgz#76b3e6e6cece5c69d49a5792c3d01bd1a0cdc7ea"
@@ -1576,7 +1607,7 @@ mkdirp-classic@^0.5.2:
   resolved "https://registry.yarnpkg.com/mkdirp-classic/-/mkdirp-classic-0.5.3.tgz#fa10c9115cc6d8865be221ba47ee9bed78601113"
   integrity sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==
 
-moment@^2.17.1:
+moment@^2.17.1, moment@^2.29.2:
   version "2.29.4"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
   integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==

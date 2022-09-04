@@ -1,5 +1,4 @@
 import { promises as fs } from 'fs';
-import * as theme from 'jsonresume-theme-caffeine';
 import puppeteer from 'puppeteer';
 import { render } from 'resumed';
 import yaml from 'js-yaml';
@@ -16,8 +15,15 @@ const resume = yaml.load(await fs.readFile('./public/resume.yaml', 'utf-8'));
 log.info('Saving json...');
 await fs.writeFile('./public/generated/resume.json', JSON.stringify(resume));
 
+const themeName = resume.meta?.theme ?? 'flat';
+
+const theme = await import(`jsonresume-theme-${themeName}`);
+
 log.info('Rendering resume...');
 const html = await render(resume, theme);
+
+log.info('Saving html...');
+await fs.writeFile('./public/generated/resume.html', html);
 
 log.info('Launching Puppeteer...');
 const browser = await puppeteer.launch({
@@ -31,7 +37,13 @@ log.info('Exporting PDF...');
 await page.pdf({
     path: './public/generated/resume.pdf',
     format: 'letter',
-    printBackground: true,
+    printBackground: false,
+    margin: {
+        top: '48px',
+        left: '16px',
+        right: '16px',
+        bottom: '32px',
+    },
 });
 await browser.close();
 
