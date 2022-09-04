@@ -3,10 +3,23 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 const Home: NextPage<{ resume: any }> = ({ resume }) => {
+    const hour = new Date().getHours();
+    let timeNoun: string;
+    if (hour < 2) {
+        timeNoun = 'evening';
+    } else if (hour < 6) {
+        timeNoun = 'eremorning';
+    } else if (hour < 12) {
+        timeNoun = 'morning';
+    } else if (hour < 12 + 6) {
+        timeNoun = 'afternoon';
+    } else {
+        timeNoun = 'evening';
+    }
     return (
         <>
             <Head>
-                <title>Read Only by HTML5 UP</title>
+                <title>Jonathan Kula</title>
                 <meta charSet="utf-8" />
                 <meta
                     name="viewport"
@@ -40,15 +53,30 @@ const Home: NextPage<{ resume: any }> = ({ resume }) => {
                         <li>
                             <a href="#four">Contact</a>
                         </li>
-                        <li>
+                        <li
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                            }}
+                        >
                             <a
-                                href="/generated/resume.pdf"
+                                href="/generated/resume.html"
                                 data-skip="true"
                                 target="_blank"
                                 rel="noreferrer"
                             >
                                 Resume{' '}
                                 <i className="icon solid fa-external-link"></i>
+                            </a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a
+                                href="/generated/resume.pdf"
+                                data-skip="true"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                (PDF&nbsp;
+                                <i className="icon solid fa-external-link"></i>)
                             </a>
                         </li>
                     </ul>
@@ -99,12 +127,31 @@ const Home: NextPage<{ resume: any }> = ({ resume }) => {
                         </div>
                         <div className="container">
                             <header className="major">
-                                <h2>Read Only</h2>
+                                <h2>Good {timeNoun}!</h2>
                                 <p>
-                                    Just an incredibly simple responsive site
-                                    <br />
-                                    template freebie by{' '}
-                                    <a href="http://html5up.net">HTML5 UP</a>.
+                                    I’m Jonathan— programmer by day, and trying
+                                    out too many hobbies by night {':)'}
+                                </p>
+                                <p>
+                                    This site is a WIP. Feel free to explore my{' '}
+                                    <a
+                                        href="https://github.com/jdkula"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                    >
+                                        GitHub{' '}
+                                        <i className="icon solid fa-external-link" />
+                                    </a>{' '}
+                                    or check out my{' '}
+                                    <a
+                                        href="/generated/resume.html"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                    >
+                                        resume{' '}
+                                        <i className="icon solid fa-external-link" />
+                                    </a>{' '}
+                                    in the meantime!
                                 </p>
                             </header>
                             <p>
