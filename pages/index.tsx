@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           <p>
             I got reprogrammed by a rogue AI
             <br />
-            and now I'm totally cray
+            and now I’m totally cray
           </p>
         </header>
         <nav id="nav">
@@ -85,7 +85,7 @@ const Home: NextPage = () => {
           {/* One */}
           <section id="one">
             <div className="image main" data-position="center">
-              <img src="images/banner.jpg" alt="" />
+              <Image src="images/banner.jpg" alt="" layout="fill" />
             </div>
             <div className="container">
               <header className="major">
@@ -139,7 +139,12 @@ const Home: NextPage = () => {
               <div className="features">
                 <article>
                   <a href="#" className="image">
-                    <Image src="/images/pic01.jpg" alt="" width={400} height={400} />
+                    <Image
+                      src="/images/pic01.jpg"
+                      alt=""
+                      width={400}
+                      height={400}
+                    />
                   </a>
                   <div className="inner">
                     <h4>Possibly broke spacetime</h4>
@@ -152,7 +157,12 @@ const Home: NextPage = () => {
                 </article>
                 <article>
                   <a href="#" className="image">
-                    <Image src="/images/pic02.jpg" alt="" width={400} height={400} />
+                    <Image
+                      src="/images/pic02.jpg"
+                      alt=""
+                      width={400}
+                      height={400}
+                    />
                   </a>
                   <div className="inner">
                     <h4>Terraformed a small moon</h4>
@@ -165,7 +175,12 @@ const Home: NextPage = () => {
                 </article>
                 <article>
                   <a href="#" className="image">
-                    <Image src="/images/pic03.jpg" alt="" width={400} height={400} />
+                    <Image
+                      src="/images/pic03.jpg"
+                      alt=""
+                      width={400}
+                      height={400}
+                    />
                   </a>
                   <div className="inner">
                     <h4>Snapped dark matter in the wild</h4>
