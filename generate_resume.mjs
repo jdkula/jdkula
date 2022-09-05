@@ -3,8 +3,42 @@ import puppeteer from 'puppeteer';
 import { render } from 'resumed';
 import yaml from 'yaml';
 import tslog from 'tslog';
+import fetch from 'node-fetch';
 
 const log = new tslog.Logger({ displayFunctionName: false });
+
+function stripExtraProperties(object, schema, path = '') {
+    if (!object || !schema) {
+        return;
+    }
+
+    const validKeys = Object.keys(schema);
+    const objectKeys = Object.keys(object);
+
+    for (const key of objectKeys) {
+        if (!validKeys.includes(key)) {
+            log.debug('Deleting key', path + '.' + key);
+            delete object[key];
+        } else if (Array.isArray(object[key])) {
+            for (let i = 0; i < object[key].length; i++) {
+                const item = object[key][i];
+                if (typeof item === 'object') {
+                    stripExtraProperties(
+                        item,
+                        schema[key]?.items?.properties,
+                        `.${key}[${i}]`
+                    );
+                }
+            }
+        } else if (typeof object[key] === 'object') {
+            stripExtraProperties(
+                object[key],
+                schema[key]?.properties,
+                '.' + key
+            );
+        }
+    }
+}
 
 // ==== Output Setup ====
 log.info('Creating output directory...');
@@ -28,6 +62,10 @@ export default Resume;
 );
 
 // ==== JSON Validation & Generation ====
+log.info('Validating resume and stripping extra fields.');
+const schema = await (await fetch(resume.$schema)).json();
+stripExtraProperties(resume, schema.properties);
+
 log.info('Saving generated json...');
 await fs.writeFile('./public/generated/resume.json', JSON.stringify(resume));
 

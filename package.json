@@ -21,6 +21,7 @@
         "jsonresume-theme-short": "^0.1.7",
         "jsonresume-theme-stackoverflow": "^2.0.0",
         "next": "12.2.5",
+        "node-fetch": "^3.2.10",
         "puppeteer": "^17.1.0",
         "react": "18.2.0",
         "react-dom": "18.2.0",
