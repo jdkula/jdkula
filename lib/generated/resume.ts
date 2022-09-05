@@ -1,7 +1,7 @@
 const resumeJson = ({
     "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
     "meta": {
-        "theme": "caffeine"
+        "theme": "short"
     },
     "basics": {
         "name": "Jonathan Kula",
@@ -73,6 +73,9 @@ const resumeJson = ({
                 "Kubernetes"
             ],
             "url": "https://getkeyset.com",
+            "photos": [
+                "/images/keyset.png"
+            ],
             "type": "webapp",
             "roles": [
                 "Sole Full Stack Design + Development",
@@ -90,6 +93,10 @@ const resumeJson = ({
                 "Team Project"
             ],
             "url": "https://paperless.stanford.edu/",
+            "photos": [
+                "/images/paperless.png"
+            ],
+            "type": "webapp",
             "roles": [
                 "Contributor"
             ]
@@ -102,13 +109,18 @@ const resumeJson = ({
                 "React",
                 "MaterialUI",
                 "Next.JS",
+                "Service Workers",
+                "Offline-First Web Development",
                 "GraphQL",
                 "Hasura",
                 "PostgreSQL",
                 "AWS S3",
                 "Terraform"
             ],
-            "url": "https://github.com/jdkula/audio-hq",
+            "url": "https://audio-hq.jdkula.dev/",
+            "photos": [],
+            "type": "webapp",
+            "repo": "https://github.com/jdkula/audio-hq",
             "roles": [
                 "Conceived, designed, and developed myself"
             ]
@@ -159,7 +171,9 @@ const resumeJson = ({
             ],
             "extraKeywords": [
                 "Next.JS",
-                "MaterialUI"
+                "MaterialUI",
+                "Offline-First Web Development",
+                "Service Workers"
             ]
         },
         {

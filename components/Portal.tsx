@@ -1,36 +1,36 @@
 import {
-    DetailedHTMLProps,
-    HTMLProps,
-    useEffect,
-    useRef,
-    useState,
+  DetailedHTMLProps,
+  HTMLProps,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 import ReactDOM from 'react-dom';
 
 export function Portal({
-    children,
-    style,
+  children,
+  style,
 }: Pick<
-    DetailedHTMLProps<HTMLProps<HTMLDivElement>, HTMLDivElement>,
-    'children' | 'style'
+  DetailedHTMLProps<HTMLProps<HTMLDivElement>, HTMLDivElement>,
+  'children' | 'style'
 >) {
-    const [portal, setPortal] = useState<HTMLDivElement | null>(null);
+  const [portal, setPortal] = useState<HTMLDivElement | null>(null);
 
-    useEffect(() => {
-        const portal = document.createElement('div');
-        Object.assign(portal.style, style);
+  useEffect(() => {
+    const portal = document.createElement('div');
+    Object.assign(portal.style, style);
 
-        setPortal(portal);
+    setPortal(portal);
 
-        document.body.appendChild(portal);
-        return () => {
-            document.body.removeChild(portal);
-        };
-    }, [style]);
+    document.body.appendChild(portal);
+    return () => {
+      document.body.removeChild(portal);
+    };
+  }, [style]);
 
-    if (portal == null) {
-        return null;
-    }
+  if (portal == null) {
+    return null;
+  }
 
-    return ReactDOM.createPortal(children, portal);
+  return ReactDOM.createPortal(children, portal);
 }

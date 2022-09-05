@@ -1,9 +1,11 @@
 {
-    "extends": ["next/core-web-vitals", "plugin:mdx/recommended", "prettier"],
-    "settings": {
-        "mdx/code-blocks": true
-    },
-    "rules": {
-        "react/no-unknown-properties": false
-    }
+  "extends": ["next/core-web-vitals", "plugin:mdx/recommended"],
+  "plugins": ["prettier"],
+  "settings": {
+    "mdx/code-blocks": true
+  },
+  "rules": {
+    "react/no-unknown-property": "off",
+    "prettier/prettier": "error"
+  }
 }

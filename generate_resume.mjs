@@ -64,10 +64,11 @@ export default Resume;
 // ==== JSON Validation & Generation ====
 log.info('Validating resume and stripping extra fields.');
 const schema = await (await fetch(resume.$schema)).json();
-stripExtraProperties(resume, schema.properties);
+const generated = JSON.parse(JSON.stringify(resume));
+stripExtraProperties(generated, schema.properties);
 
 log.info('Saving generated json...');
-await fs.writeFile('./public/generated/resume.json', JSON.stringify(resume));
+await fs.writeFile('./public/generated/resume.json', JSON.stringify(generated));
 
 // ==== HTML Generation ====
 const themeName = resume.meta?.theme ?? 'flat';

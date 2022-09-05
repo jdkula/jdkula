@@ -8,12 +8,12 @@ import { OutLink } from '~/components/OutLink';
 import { ToastContainer } from 'react-toastify';
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return (
-        <MDXProvider components={{ a: OutLink }}>
-            <Component {...pageProps} />
-            <ToastContainer position="bottom-center" />
-        </MDXProvider>
-    );
+  return (
+    <MDXProvider components={{ a: OutLink }}>
+      <Component {...pageProps} />
+      <ToastContainer position="bottom-center" />
+    </MDXProvider>
+  );
 }
 
 export default MyApp;
