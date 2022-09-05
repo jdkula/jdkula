@@ -6,13 +6,16 @@ import tslog from 'tslog';
 
 const log = new tslog.Logger({ displayFunctionName: false });
 
+// ==== Output Setup ====
 log.info('Creating output directory...');
 await fs.mkdir('./public/generated', { recursive: true });
 await fs.mkdir('./lib/generated', { recursive: true });
 
+// ==== Resume Parse ====
 log.info('Loading resume...');
 const resume = yaml.parse(await fs.readFile('./lib/resume.yaml', 'utf-8'));
 
+// ==== Typescript Typings ====
 log.info('Saving typescript information...');
 await fs.writeFile(
     './lib/generated/resume.ts',
@@ -24,9 +27,11 @@ export default Resume;
 `.trim()
 );
 
+// ==== JSON Validation & Generation ====
 log.info('Saving generated json...');
 await fs.writeFile('./public/generated/resume.json', JSON.stringify(resume));
 
+// ==== HTML Generation ====
 const themeName = resume.meta?.theme ?? 'flat';
 
 const theme = await import(`jsonresume-theme-${themeName}`);
@@ -37,6 +42,7 @@ const html = await render(resume, theme);
 log.info('Saving html...');
 await fs.writeFile('./public/generated/resume.html', html);
 
+// ==== PDF Generation ====
 log.info('Launching Puppeteer...');
 const browser = await puppeteer.launch({
     args: ['--no-sandbox'],

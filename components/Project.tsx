@@ -42,24 +42,19 @@ export function ProjectOverview({
             </a>
             <div className="inner">
                 <h4>{project.name}</h4>
-                {project.keywords.map((keyword: string) => (
-                    <div
-                        className="keyword"
-                        key={keyword}
-                        style={{ backgroundColor: colorMap.get(keyword) }}
-                    >
-                        {keyword}
-                    </div>
-                ))}
+                <div style={{marginBottom: '8px'}}>
+                    {project.keywords.map((keyword: string) => (
+                        <div
+                            className="keyword"
+                            key={keyword}
+                            style={{ backgroundColor: colorMap.get(keyword) }}
+                        >
+                            {keyword}
+                        </div>
+                    ))}
+                </div>
 
                 <p>{project.description}</p>
-                <div>
-                    <ul>
-                        {project.roles.map((role: string) => (
-                            <li key={role}>{role}</li>
-                        ))}
-                    </ul>
-                </div>
             </div>
         </article>
     );

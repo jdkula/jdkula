@@ -2006,7 +2006,8 @@ input[type='button'],
     opacity: 0;
 
     width: 500px;
-    height: 400px;
+    min-height: 400px;
+    max-height: 70vh;
 
     @include breakpoint('<=small') {
         width: 300px;
@@ -2029,6 +2030,8 @@ input[type='button'],
     transition: opacity 0.25s, top 0.25s cubic-bezier(0, 0.4, 0.25, 0.99),
         left 0.25s cubic-bezier(0, 0.4, 0.25, 0.99),
         transform 0.25s cubic-bezier(0, 0.4, 0.25, 0.99);
+    
+    overflow: auto;
 }
 
 .modal-backdrop[data-open='true'] .modal {

@@ -7,30 +7,44 @@ import Skills from '~/sections/02_skills.mdx';
 import Projects from '~/sections/03_projects.mdx';
 
 import resumeYaml from '~/lib/resume.yaml';
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
 import Resume from '~/lib/generated/resume';
 
 const resume: Resume = resumeYaml;
 
 const Home: NextPage = () => {
+    const [submitting, setSubmitting] = useState(false);
+
     const onFormSubmit = useCallback(async (e: React.FormEvent) => {
         e.preventDefault();
+        setSubmitting(true);
 
+        const form = e.currentTarget as HTMLFormElement;
         const values: Record<string, string> = {};
         e.currentTarget.querySelectorAll('input').forEach((e) => {
             values[e.name] = e.value;
         });
 
         try {
-            await fetch('https://formsubmit.co/ajax/' + resume.basics.email);
+            const result = await fetch(
+                'https://formsubmit.co/ajax/2db04eb86536bd39136243efa9c7b753',
+                { method: 'POST' }
+            );
 
+            if (result.status !== 200) {
+                throw Error('Bad status');
+            }
+
+            form.reset();
             toast('Submitted!', { type: 'success' });
         } catch (e) {
             console.warn(e);
             toast('An error occured while submitting your form.', {
                 type: 'error',
             });
+        } finally {
+            setSubmitting(false);
         }
     }, []);
     return (
@@ -180,6 +194,7 @@ const Home: NextPage = () => {
                                             name="name"
                                             id="name"
                                             placeholder="Name"
+                                            disabled={submitting}
                                         />
                                     </div>
                                     <div className="col-6 col-12-xsmall">
@@ -188,6 +203,7 @@ const Home: NextPage = () => {
                                             name="email"
                                             id="email"
                                             placeholder="Email"
+                                            disabled={submitting}
                                         />
                                     </div>
                                     <div className="col-12">
@@ -196,6 +212,7 @@ const Home: NextPage = () => {
                                             name="subject"
                                             id="subject"
                                             placeholder="Subject"
+                                            disabled={submitting}
                                         />
                                     </div>
                                     <div className="col-12">
@@ -204,6 +221,7 @@ const Home: NextPage = () => {
                                             id="message"
                                             placeholder="Message"
                                             rows={6}
+                                            disabled={submitting}
                                         ></textarea>
                                     </div>
                                     <div className="col-12">
@@ -213,12 +231,14 @@ const Home: NextPage = () => {
                                                     type="submit"
                                                     className="primary"
                                                     value="Send Message"
+                                                    disabled={submitting}
                                                 />
                                             </li>
                                             <li>
                                                 <input
                                                     type="reset"
                                                     value="Reset Form"
+                                                    disabled={submitting}
                                                 />
                                             </li>
                                         </ul>

@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <MDXProvider components={{ a: OutLink }}>
             <Component {...pageProps} />
-            <ToastContainer />
+            <ToastContainer position="bottom-center" />
         </MDXProvider>
     );
 }
