@@ -106,7 +106,8 @@ projects:
       - AWS S3
       - Terraform
     url: https://audio-hq.jdkula.dev/
-    photos: []
+    photos:
+      - /images/audio-hq.png
     type: 'webapp'
     repo: https://github.com/jdkula/audio-hq
     roles:
