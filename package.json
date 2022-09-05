@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "concurrently \"yarn:next dev\" \"yarn:watch-resume\"",
         "watch-resume": "nodemon --watch lib/resume.yaml --watch ./generate_resume.mjs -e mjs,yaml,yml ./generate_resume.mjs",
-        "build": "concurrently \"yarn:build-resume\" \"yarn:next build\"",
+        "build": "yarn build-resume && next build",
         "build-resume": "node ./generate_resume.mjs",
         "start": "next start",
         "lint": "eslint --ext ts,tsx,js,jsx,md,mdx --no-error-on-unmatched-pattern components lib pages",
