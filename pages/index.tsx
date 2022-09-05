@@ -29,7 +29,11 @@ const Home: NextPage = () => {
     try {
       const result = await fetch(
         'https://formsubmit.co/ajax/2db04eb86536bd39136243efa9c7b753',
-        { method: 'POST' }
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(values),
+        }
       );
 
       if (result.status !== 200) {
