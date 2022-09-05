@@ -8,7 +8,7 @@
         "build": "concurrently \"yarn:build-resume\" \"yarn:next build\"",
         "build-resume": "node ./generate_resume.mjs",
         "start": "next start",
-        "lint": "eslint --ext ts,tsx,js,jsx,md,mdx components lib pages",
+        "lint": "eslint --ext ts,tsx,js,jsx,md,mdx --no-error-on-unmatched-pattern components lib pages",
         "export": "yarn build && next export"
     },
     "dependencies": {
