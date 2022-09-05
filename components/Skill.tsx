@@ -1,4 +1,6 @@
-export function Skill({ skill}: { skill: any }) {
+import Resume from "~/lib/generated/resume";
+
+export function Skill({ skill}: { skill: Resume['skills'][number] }) {
     const keywords = [...skill.keywords, ...(skill.extraKeywords ?? [])];
     return (
         <li className={`icon ${skill.icon}`}>

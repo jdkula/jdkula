@@ -1,11 +1,7 @@
-import {Project} from '~/components/Project.tsx';
+import { ProjectList } from '~/components/ProjectList.tsx';
 
 ### A Few Accomplishments
 
 Here are a few personal or related projects I’ve built
 
-<div className="features">
-    {props.resume.projects.map((project) => (
-        <Project project={project} resume={props.resume} />
-    ))}
-</div>
+<ProjectList resume={props.resume} />

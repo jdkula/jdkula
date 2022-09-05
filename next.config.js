@@ -3,7 +3,7 @@ const withMDX = require('@next/mdx')({
     options: {
         remarkPlugins: [],
         rehypePlugins: [],
-        providerImportSource: '@mdx-js/react'
+        providerImportSource: '@mdx-js/react',
     },
 });
 
@@ -12,6 +12,9 @@ const nextConfig = withMDX({
     reactStrictMode: true,
     swcMinify: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    eslint: {
+        dirs: ['pages', 'sections', 'lib', 'components'],
+    },
     webpack: (config) => {
         config.module.rules.push({
             test: /\.ya?ml$/,

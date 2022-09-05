@@ -1,0 +1,211 @@
+const resumeJson = ({
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
+    "meta": {
+        "theme": "caffeine"
+    },
+    "basics": {
+        "name": "Jonathan Kula",
+        "label": "MSCS @ Stanford",
+        "picture": "https://avatars.githubusercontent.com/u/4166625?v=4",
+        "email": "jonathan@jdkula.dev",
+        "phone": "(909) 373-6583",
+        "url": "https://jdkula.dev",
+        "location": {
+            "address": "726 Serra St. Apt 815-A",
+            "postalCode": "CA 94305",
+            "city": "Stanford",
+            "countryCode": "US",
+            "region": "California"
+        },
+        "profiles": [
+            {
+                "network": "LinkedIn",
+                "username": "jdkula",
+                "url": "https://www.linkedin.com/in/jdkula",
+                "icon": "brands fa-linkedin"
+            },
+            {
+                "network": "GitHub",
+                "username": "jdkula",
+                "url": "https://github.com/jdkula",
+                "icon": "brands fa-github"
+            }
+        ],
+        "summary": "Passionate, driven, caring individual with a love of learning who strives to make the most of every situation, from good to bad, and is excited to jump into the unknown, testing, prototyping, problem-solving, and exploring in tandem with others.",
+        "quip": "I’m Jonathan— programmer by day, and trying out too many hobbies by night :)"
+    },
+    "education": [
+        {
+            "institution": "Stanford University",
+            "url": "https://stanford.edu",
+            "area": "Computer Science [Systems]",
+            "studyType": "Bachelors",
+            "startDate": "2017-09-26",
+            "endDate": "2021-06-07",
+            "score": "3.9",
+            "courses": [
+                "CS140E - OS Design & Implementation",
+                "CS161 - Algorithm Design & Analysis",
+                "CS155, CS144 - Computere & Network Security",
+                "CS145 - Databases",
+                "CS147, CS210 - HCI & Design Thinking"
+            ]
+        },
+        {
+            "institution": "Stanford University",
+            "url": "https://stanford.edu",
+            "area": "Computer Science [HCI]",
+            "studyType": "Masters",
+            "startDate": "2021-09-26",
+            "endDate": "2023-06-07"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Keyset",
+            "description": "Allows the assignment of rich text clipboard snippets to keystrokes to assist industries tha utilize repeated blocks of text (e.g. teachers, lawyers, etc).",
+            "keywords": [
+                "Typescript",
+                "Vue",
+                "Node.js",
+                "GraphQL",
+                "PostgreSQL",
+                "Kubernetes"
+            ],
+            "url": "https://getkeyset.com",
+            "type": "webapp",
+            "roles": [
+                "Sole Full Stack Design + Development",
+                "System Administration"
+            ]
+        },
+        {
+            "name": "Paperless",
+            "description": "Custom assignment submission and grading webapp used by the intro CS program at Stanford.\nExtended the TA feedback feature to allow for new types of comments, and integrated our auto-grading frameworks with our online rubrics.",
+            "keywords": [
+                "Javascript",
+                "React",
+                "Node.js",
+                "MariaDB",
+                "Team Project"
+            ],
+            "url": "https://paperless.stanford.edu/",
+            "roles": [
+                "Contributor"
+            ]
+        },
+        {
+            "name": "Audio HQ",
+            "description": "Collaborative environment for uploading and playing music in sync with others, with a focus on caching and low bandwidth usage.",
+            "keywords": [
+                "Typescript",
+                "React",
+                "MaterialUI",
+                "Next.JS",
+                "GraphQL",
+                "Hasura",
+                "PostgreSQL",
+                "AWS S3",
+                "Terraform"
+            ],
+            "url": "https://github.com/jdkula/audio-hq",
+            "roles": [
+                "Conceived, designed, and developed myself"
+            ]
+        }
+    ],
+    "work": [
+        {
+            "name": "Rockset",
+            "position": "Software Engineering Intern",
+            "url": "https://rockset.com",
+            "startDate": "2021-06-18",
+            "endDate": "2021-09-18",
+            "summary": "12-week internship of full-stack software development with guidance from a mentor, plus occasional bug-fixing from the task queue",
+            "highlights": [
+                "Completed two seperate intern projects",
+                "Designed, implemented, and deployed monitoring and logging mechanisms within core infrastructure code.",
+                "Designed, implemented, and deployed an augmentation and significant functionality improvement to Rockset’s Kubernetes controllers.",
+                "Helped deploy mission-critical infrastructure",
+                "Worked in a wide variety of languages"
+            ]
+        },
+        {
+            "name": "Stanford University",
+            "position": "Teaching Assistant (Intro CS: A, AJ, AP, AX, B)",
+            "startDate": "2018-01-15",
+            "summary": "Taught weekly 50-minute problem-solving sections including 7-12 students from undergraduate to Ph. D, and held office hours. Provided feedback on student work; graded all assignments.",
+            "highlights": [
+                "Student feedback score: 4.9/5 for responsiveness, preparedness, and helpfulness.",
+                "Recognized multiple times as an exemplar TA.",
+                "Served as a guest lecturer in CS106AJ.",
+                "Helped co-develop the CS106AX curriculum."
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Web Development",
+            "color": "#FDF1EC",
+            "level": "Expert",
+            "icon": "solid fa-code",
+            "keywords": [
+                "Typescript",
+                "Javascript",
+                "React",
+                "Vue",
+                "HTML",
+                "CSS"
+            ],
+            "extraKeywords": [
+                "Next.JS",
+                "MaterialUI"
+            ]
+        },
+        {
+            "name": "Full Stack",
+            "color": "#ECF9FE",
+            "level": "Expert",
+            "icon": "solid fa-layer-group",
+            "keywords": [
+                "API Design",
+                "Node.js",
+                "Java (+Kotlin, Scala)",
+                "Python 3",
+                "GraphQL"
+            ],
+            "extraKeywords": [
+                "Hasura"
+            ]
+        },
+        {
+            "name": "Database Systems",
+            "color": "#FFFEED",
+            "level": "Intermediate",
+            "icon": "solid fa-database",
+            "keywords": [
+                "PostgreSQL",
+                "MongoDB",
+                "BigQuery"
+            ],
+            "extraKeywords": [
+                "MariaDB"
+            ]
+        },
+        {
+            "name": "Application Platforms & DevOps",
+            "color": "#F4F6F6",
+            "level": "Intermediate",
+            "icon": "solid fa-server",
+            "keywords": [
+                "Kubernetes",
+                "Docker",
+                "Terraform",
+                "AWS S3"
+            ]
+        }
+    ]
+});
+type Resume = typeof resumeJson;
+
+export default Resume;

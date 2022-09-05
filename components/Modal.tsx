@@ -69,6 +69,7 @@ export function ModalTicker({
                             key={i}
                             onClick={() => onSet?.(i)}
                             data-location={getLocation(i, show)}
+                            style={{ cursor: i === show ? 'auto' : 'pointer' }}
                         >
                             {child}
                         </div>

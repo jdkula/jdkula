@@ -8,11 +8,23 @@ const log = new tslog.Logger({ displayFunctionName: false });
 
 log.info('Creating output directory...');
 await fs.mkdir('./public/generated', { recursive: true });
+await fs.mkdir('./lib/generated', { recursive: true });
 
 log.info('Loading resume...');
-const resume = yaml.parse(await fs.readFile('./public/resume.yaml', 'utf-8'));
+const resume = yaml.parse(await fs.readFile('./lib/resume.yaml', 'utf-8'));
 
-log.info('Saving json...');
+log.info('Saving typescript information...');
+await fs.writeFile(
+    './lib/generated/resume.ts',
+    `
+const resumeJson = (${JSON.stringify(resume, null, 4)});
+type Resume = typeof resumeJson;
+
+export default Resume;
+`.trim()
+);
+
+log.info('Saving generated json...');
 await fs.writeFile('./public/generated/resume.json', JSON.stringify(resume));
 
 const themeName = resume.meta?.theme ?? 'flat';

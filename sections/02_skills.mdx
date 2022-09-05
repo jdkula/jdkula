@@ -8,9 +8,6 @@ to explore systems I’m unfamiliar with.
 
 <ul className="feature-icons">
     {props.resume.skills.map((skill, i) => (
-        <Skill
-            skill={skill}
-            key={skill.name}
-        />
+        <Skill skill={skill} key={skill.name} />
     ))}
 </ul>

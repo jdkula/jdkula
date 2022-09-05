@@ -1,3 +1,6 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"]
+    "extends": ["next/core-web-vitals", "plugin:mdx/recommended", "prettier"],
+    "settings": {
+        "mdx/code-blocks": true
+    }
 }
