@@ -2,20 +2,18 @@ import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
-const Home: NextPage<{ resume: any }> = ({ resume }) => {
-    const hour = new Date().getHours();
-    let timeNoun: string;
-    if (hour < 2) {
-        timeNoun = 'evening';
-    } else if (hour < 6) {
-        timeNoun = 'eremorning';
-    } else if (hour < 12) {
-        timeNoun = 'morning';
-    } else if (hour < 12 + 6) {
-        timeNoun = 'afternoon';
-    } else {
-        timeNoun = 'evening';
-    }
+import Hello from '~/sections/01_hello.mdx';
+import Skills from '~/sections/02_skills.mdx';
+import Projects from '~/sections/03_projects.mdx';
+
+import type resumeJson from '~/public/generated/resume.json';
+import resumeYaml from '~/public/resume.yaml';
+import {Portal} from '~/components/Portal';
+import {Modal, ModalTicker} from '~/components/Modal';
+
+const resume: typeof resumeJson = resumeYaml;
+
+const Home: NextPage = () => {
     return (
         <>
             <Head>
@@ -83,28 +81,25 @@ const Home: NextPage<{ resume: any }> = ({ resume }) => {
                 </nav>
                 <footer>
                     <ul className="icons">
+                        {resume.basics.profiles.map((profile: any) => (
+                            <li key={profile.network}>
+                                <a
+                                    href={profile.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className={`icon ${profile.icon ?? ''}`}
+                                >
+                                    <span className="label">
+                                        {profile.network}
+                                    </span>
+                                </a>
+                            </li>
+                        ))}
                         <li>
-                            <a href="#" className="icon brands fa-twitter">
-                                <span className="label">Twitter</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="icon brands fa-facebook-f">
-                                <span className="label">Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="icon brands fa-instagram">
-                                <span className="label">Instagram</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="icon brands fa-github">
-                                <span className="label">Github</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="icon solid fa-envelope">
+                            <a
+                                href={`mailto:${resume.basics.email}`}
+                                className="icon solid fa-envelope"
+                            >
                                 <span className="label">Email</span>
                             </a>
                         </li>
@@ -127,148 +122,22 @@ const Home: NextPage<{ resume: any }> = ({ resume }) => {
                         </div>
                         <div className="container">
                             <header className="major">
-                                <h2>Good {timeNoun}!</h2>
-                                <p>
-                                    I’m Jonathan— programmer by day, and trying
-                                    out too many hobbies by night {':)'}
-                                </p>
-                                <p>
-                                    This site is a WIP. Feel free to explore my{' '}
-                                    <a
-                                        href="https://github.com/jdkula"
-                                        rel="noreferrer"
-                                        target="_blank"
-                                    >
-                                        GitHub{' '}
-                                        <i className="icon solid fa-external-link" />
-                                    </a>{' '}
-                                    or check out my{' '}
-                                    <a
-                                        href="/generated/resume.html"
-                                        rel="noreferrer"
-                                        target="_blank"
-                                    >
-                                        resume{' '}
-                                        <i className="icon solid fa-external-link" />
-                                    </a>{' '}
-                                    in the meantime!
-                                </p>
+                                <Hello resume={resume} />
                             </header>
-                            <p>
-                                Faucibus sed lobortis aliquam lorem blandit.
-                                Lorem eu nunc metus col. Commodo id in arcu ante
-                                lorem ipsum sed accumsan erat praesent faucibus
-                                commodo ac mi lacus. Adipiscing mi ac commodo.
-                                Vis aliquet tortor ultricies non ante erat nunc
-                                integer eu ante ornare amet commetus vestibulum
-                                blandit integer in curae ac faucibus integer
-                                non. Adipiscing cubilia elementum.
-                            </p>
                         </div>
                     </section>
 
                     {/* Two */}
                     <section id="two">
                         <div className="container">
-                            <h3>Things I Can Do</h3>
-                            <p>
-                                Integer eu ante ornare amet commetus vestibulum
-                                blandit integer in curae ac faucibus integer
-                                non. Adipiscing cubilia elementum integer lorem
-                                ipsum dolor sit amet.
-                            </p>
-                            <ul className="feature-icons">
-                                <li className="icon solid fa-code">
-                                    Write all the code
-                                </li>
-                                <li className="icon solid fa-cubes">
-                                    Stack small boxes
-                                </li>
-                                <li className="icon solid fa-book">
-                                    Read books and stuff
-                                </li>
-                                <li className="icon solid fa-coffee">
-                                    Drink much coffee
-                                </li>
-                                <li className="icon solid fa-bolt">
-                                    Lightning bolt
-                                </li>
-                                <li className="icon solid fa-users">
-                                    Shadow clone technique
-                                </li>
-                            </ul>
+                            <Skills resume={resume} Z />
                         </div>
                     </section>
 
                     {/* Three */}
                     <section id="three">
                         <div className="container">
-                            <h3>A Few Accomplishments</h3>
-                            <p>
-                                Integer eu ante ornare amet commetus vestibulum
-                                blandit integer in curae ac faucibus integer
-                                non. Adipiscing cubilia elementum integer.
-                                Integer eu ante ornare amet commetus.
-                            </p>
-                            <div className="features">
-                                <article>
-                                    <a href="#" className="image">
-                                        <Image
-                                            src="/images/pic01.jpg"
-                                            alt=""
-                                            width={400}
-                                            height={400}
-                                        />
-                                    </a>
-                                    <div className="inner">
-                                        <h4>Possibly broke spacetime</h4>
-                                        <p>
-                                            Integer eu ante ornare amet commetus
-                                            vestibulum blandit integer in curae
-                                            ac faucibus integer adipiscing
-                                            ornare amet.
-                                        </p>
-                                    </div>
-                                </article>
-                                <article>
-                                    <a href="#" className="image">
-                                        <Image
-                                            src="/images/pic02.jpg"
-                                            alt=""
-                                            width={400}
-                                            height={400}
-                                        />
-                                    </a>
-                                    <div className="inner">
-                                        <h4>Terraformed a small moon</h4>
-                                        <p>
-                                            Integer eu ante ornare amet commetus
-                                            vestibulum blandit integer in curae
-                                            ac faucibus integer adipiscing
-                                            ornare amet.
-                                        </p>
-                                    </div>
-                                </article>
-                                <article>
-                                    <a href="#" className="image">
-                                        <Image
-                                            src="/images/pic03.jpg"
-                                            alt=""
-                                            width={400}
-                                            height={400}
-                                        />
-                                    </a>
-                                    <div className="inner">
-                                        <h4>Snapped dark matter in the wild</h4>
-                                        <p>
-                                            Integer eu ante ornare amet commetus
-                                            vestibulum blandit integer in curae
-                                            ac faucibus integer adipiscing
-                                            ornare amet.
-                                        </p>
-                                    </div>
-                                </article>
-                            </div>
+                            <Projects resume={resume} />
                         </div>
                     </section>
 
@@ -674,7 +543,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 <section id="footer">
                     <div className="container">
                         <ul className="copyright">
-                            <li>&copy; Untitled. All rights reserved.</li>
+                            <li>
+                                &copy; Jonathan Kula 2022. All rights reserved.
+                            </li>
                             <li>
                                 Design:{' '}
                                 <a href="http://html5up.net">HTML5 UP</a>
@@ -697,15 +568,3 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 };
 
 export default Home;
-
-export const getStaticProps: GetStaticProps = async (context) => {
-    const yaml = await import('js-yaml');
-    const resume = (await import('~/public/resume.yaml')).default;
-    return {
-        props: {
-            resume: JSON.parse(
-                JSON.stringify(yaml.load(resume, { json: true }))
-            ),
-        },
-    };
-};

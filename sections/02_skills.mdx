@@ -1,0 +1,16 @@
+import { Skill } from '~/components/Skill.tsx';
+
+### Things I can do
+
+Here are just a few of the systems and skills I’m praticed with. I love [building
+tools I and others can use](#three), and I use those projects as an opportunity
+to explore systems I’m unfamiliar with.
+
+<ul className="feature-icons">
+    {props.resume.skills.map((skill, i) => (
+        <Skill
+            skill={skill}
+            key={skill.name}
+        />
+    ))}
+</ul>

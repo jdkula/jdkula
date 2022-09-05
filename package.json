@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "concurrently \"yarn:next dev\" \"yarn:watch-resume\"",
         "watch-resume": "nodemon --watch public -e mjs,yaml,yml ./generate_resume.mjs",
-        "build": "yarn build-resume && next build",
+        "build": "concurrently \"yarn:build-resume\" \"yarn:next build\"",
         "build-resume": "node ./generate_resume.mjs",
         "start": "next start",
         "lint": "next lint",
@@ -13,7 +13,9 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.2.0",
-        "js-yaml": "^4.1.0",
+        "@mdx-js/loader": "^2.1.3",
+        "@mdx-js/react": "^2.1.3",
+        "@next/mdx": "^12.2.5",
         "jsonresume-theme-caffeine": "^1.2.3",
         "jsonresume-theme-flat": "^0.3.7",
         "jsonresume-theme-short": "^0.1.7",
@@ -35,8 +37,12 @@
         "eslint": "8.23.0",
         "eslint-config-next": "12.2.5",
         "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-mdx": "^2.0.3",
         "nodemon": "^2.0.19",
         "prettier": "^2.7.1",
-        "typescript": "4.8.2"
+        "sass": "^1.54.8",
+        "typescript": "4.8.2",
+        "yaml": "^2.1.1",
+        "yaml-loader": "^0.8.0"
     }
 }

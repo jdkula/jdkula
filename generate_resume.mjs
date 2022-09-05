@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import puppeteer from 'puppeteer';
 import { render } from 'resumed';
-import yaml from 'js-yaml';
+import yaml from 'yaml';
 import tslog from 'tslog';
 
 const log = new tslog.Logger({ displayFunctionName: false });
@@ -10,7 +10,7 @@ log.info('Creating output directory...');
 await fs.mkdir('./public/generated', { recursive: true });
 
 log.info('Loading resume...');
-const resume = yaml.load(await fs.readFile('./public/resume.yaml', 'utf-8'));
+const resume = yaml.parse(await fs.readFile('./public/resume.yaml', 'utf-8'));
 
 log.info('Saving json...');
 await fs.writeFile('./public/generated/resume.json', JSON.stringify(resume));

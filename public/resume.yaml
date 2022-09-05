@@ -18,11 +18,18 @@ basics:
         - network: LinkedIn
           username: jdkula
           url: https://www.linkedin.com/in/jdkula
+          icon: brands fa-linkedin
+        - network: GitHub
+          username: jdkula
+          url: https://github.com/jdkula
+          icon: brands fa-github
     summary: >-
         Passionate, driven, caring individual with a love of learning who strives
         to make the most of every situation, from good to bad, and is excited to
         jump into the unknown, testing, prototyping, problem-solving, and exploring
         in tandem with others.
+    quip: >-
+        I’m Jonathan— programmer by day, and trying out too many hobbies by night :)
 
 education:
     - institution: Stanford University
@@ -53,11 +60,11 @@ projects:
           lawyers, etc).
       keywords:
           - Typescript
-          - Node.js
           - Vue
-          - Kubernetes
-          - PostgreSQL
+          - Node.js
           - GraphQL
+          - PostgreSQL
+          - Kubernetes
       url: https://getkeyset.com
       type: 'webapp'
       roles:
@@ -70,8 +77,8 @@ projects:
           Extended the TA feedback feature to allow for new types of comments, and integrated our auto-grading frameworks with our online rubrics.
       keywords:
           - Javascript
-          - Node.js
           - React
+          - Node.js
           - MariaDB
           - Team Project
       url: https://paperless.stanford.edu/
@@ -85,11 +92,12 @@ projects:
           - Typescript
           - React
           - MaterialUI
-          - AWS S3
-          - PostgreSQL
-          - Hasura
           - Next.JS
           - GraphQL
+          - Hasura
+          - PostgreSQL
+          - AWS S3
+          - Terraform
       url: https://github.com/jdkula/audio-hq
       roles:
           - Conceived, designed, and developed myself
@@ -127,28 +135,47 @@ work:
 
 skills:
     - name: Web Development
+      color: '#FDF1EC'
       level: Expert
+      icon: solid fa-code
       keywords:
+          - Typescript
+          - Javascript
+          - React
+          - Vue
           - HTML
           - CSS
-          - Javascript
-          - Typescript
+      extraKeywords:
+          - Next.JS
+          - MaterialUI
     - name: Full Stack
+      color: '#ECF9FE'
       level: Expert
+      icon: solid fa-layer-group
       keywords:
           - API Design
           - Node.js
           - Java (+Kotlin, Scala)
           - Python 3
+          - GraphQL
+      extraKeywords:
+          - Hasura
     - name: Database Systems
+      color: '#FFFEED'
       level: Intermediate
+      icon: solid fa-database
       keywords:
           - PostgreSQL
           - MongoDB
           - BigQuery
+      extraKeywords:
+          - MariaDB
     - name: Application Platforms & DevOps
+      color: '#F4F6F6'
       level: Intermediate
+      icon: solid fa-server
       keywords:
           - Kubernetes
           - Docker
           - Terraform
+          - AWS S3

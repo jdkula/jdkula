@@ -1,4 +1,4 @@
 declare module '*.yaml' {
-    const contents: string;
+    const contents: any;
     export = contents;
 }
