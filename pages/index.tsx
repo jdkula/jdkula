@@ -2,9 +2,9 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import Hello from '~/sections/01_hello.mdx';
-import Skills from '~/sections/02_skills.mdx';
-import Projects from '~/sections/03_projects.mdx';
+import Hello from '~/components/sections/01_hello.mdx';
+import Skills from '~/components/sections/02_skills.mdx';
+import Projects from '~/components/sections/03_projects.mdx';
 
 import resumeYaml from '~/lib/resume.yaml';
 import React, { useCallback, useState } from 'react';

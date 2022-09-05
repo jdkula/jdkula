@@ -13,7 +13,7 @@ const nextConfig = withMDX({
     swcMinify: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
-        dirs: ['pages', 'sections', 'lib', 'components'],
+        dirs: ['pages', 'lib', 'components'],
     },
     webpack: (config) => {
         config.module.rules.push({

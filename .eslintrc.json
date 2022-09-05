@@ -2,5 +2,8 @@
     "extends": ["next/core-web-vitals", "plugin:mdx/recommended", "prettier"],
     "settings": {
         "mdx/code-blocks": true
+    },
+    "rules": {
+        "react/no-unknown-properties": false
     }
 }
