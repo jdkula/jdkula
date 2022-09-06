@@ -12,6 +12,7 @@ import { toast } from 'react-toastify';
 import Resume from '~/lib/generated/resume';
 
 import { Link } from 'react-scroll';
+import DefaultLink from '~/components/DefaultLink';
 
 const resume: Resume = resumeYaml;
 
@@ -96,16 +97,17 @@ const Home: NextPage = () => {
         <nav id="nav">
           <ul>
             <li>
-              <Link
+              <DefaultLink
                 spy={true}
                 hashSpy={true}
                 to="one"
                 smooth
                 duration={500}
                 activeClass="active"
+                isTop
               >
                 About
-              </Link>
+              </DefaultLink>
             </li>
             <li>
               <Link
