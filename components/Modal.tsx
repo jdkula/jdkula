@@ -1,4 +1,5 @@
-import React, { forwardRef, ReactNode } from 'react';
+import { useGesture } from '@use-gesture/react';
+import React, { forwardRef, ReactNode, useCallback } from 'react';
 import { Portal } from './Portal';
 
 export function Modal({
@@ -44,6 +45,61 @@ function getLocation(
   }
 }
 
+function ModalTickerElement({
+  children,
+  location,
+  onClick,
+  onSwipe,
+  selected,
+}: {
+  children: ReactNode;
+  location: string;
+  onClick: () => void;
+  onSwipe: (direction: number) => void;
+  selected?: boolean;
+}) {
+  const bind = useGesture(
+    {
+      onDrag: (state) => {
+        const [swipeX] = state.swipe;
+        if (swipeX !== 0) {
+          onSwipe(swipeX);
+        }
+      },
+      onWheel: (state) => {
+        const [dx] = state.direction;
+        if (dx > 0) {
+          onSwipe(-1);
+        } else if (dx < 0) {
+          onSwipe(1);
+        }
+      },
+    },
+    {
+      enabled: selected,
+      wheel: {
+        axis: 'x',
+        threshold: 500,
+      },
+    }
+  );
+
+  return (
+    <div
+      className="modal"
+      onClick={onClick}
+      data-location={location}
+      style={{
+        cursor: selected ? 'auto' : 'pointer',
+        touchAction: selected ? 'none' : 'auto',
+      }}
+      {...bind()}
+    >
+      {children}
+    </div>
+  );
+}
+
 export function ModalTicker({
   show,
   onClose,
@@ -64,15 +120,19 @@ export function ModalTicker({
       >
         <div>
           {children?.map((child, i) => (
-            <div
-              className="modal"
+            <ModalTickerElement
               key={i}
               onClick={() => onSet?.(i)}
-              data-location={getLocation(i, show)}
-              style={{ cursor: i === show ? 'auto' : 'pointer' }}
+              onSwipe={(direction) =>
+                i - direction >= 0 &&
+                i - direction < children.length &&
+                onSet?.(i - direction)
+              }
+              location={getLocation(i, show)}
+              selected={i === show}
             >
               {child}
-            </div>
+            </ModalTickerElement>
           ))}
         </div>
       </div>

@@ -7,14 +7,25 @@ import Skills from '~/components/sections/02_skills.mdx';
 import Projects from '~/components/sections/03_projects.mdx';
 
 import resumeYaml from '~/lib/resume.yaml';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import Resume from '~/lib/generated/resume';
+
+import { Link } from 'react-scroll';
 
 const resume: Resume = resumeYaml;
 
 const Home: NextPage = () => {
   const [submitting, setSubmitting] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(false);
+
+  useEffect(() => {
+    if (headerVisible) {
+      document.body.classList.add('header-visible');
+    } else {
+      document.body.classList.remove('header-visible');
+    }
+  }, [headerVisible]);
 
   const onFormSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,8 +72,18 @@ const Home: NextPage = () => {
           content="width=device-width, initial-scale=1, user-scalable=no"
         />
       </Head>
+      <div id="titleBar">
+        <a
+          href="#header"
+          className="toggle"
+          onClick={() => setHeaderVisible(!headerVisible)}
+        ></a>
+        <span className="title">
+          <a href="#">{resume.basics.name}</a>
+        </span>
+      </div>
       {/* Header */}
-      <section id="header">
+      <section id="header" onClickCapture={() => setHeaderVisible(false)}>
         <header>
           <span className="image avatar">
             <Image src="/images/avatar.jpg" alt="" layout="fill" />
@@ -75,18 +96,52 @@ const Home: NextPage = () => {
         <nav id="nav">
           <ul>
             <li>
-              <a href="#one" className="active">
+              <Link
+                spy={true}
+                hashSpy={true}
+                to="one"
+                smooth
+                duration={500}
+                activeClass="active"
+              >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#two">Things I Can Do</a>
+              <Link
+                spy={true}
+                hashSpy={true}
+                to="two"
+                smooth
+                duration={500}
+                activeClass="active"
+              >
+                Things I Can Do
+              </Link>{' '}
             </li>
             <li>
-              <a href="#three">A Few Accomplishments</a>
+              <Link
+                spy={true}
+                hashSpy={true}
+                to="three"
+                smooth
+                duration={500}
+                activeClass="active"
+              >
+                A Few Accomplishments
+              </Link>{' '}
             </li>
             <li>
-              <a href="#four">Contact</a>
+              <Link
+                spy={true}
+                hashSpy={true}
+                to="four"
+                smooth
+                duration={500}
+                activeClass="active"
+              >
+                Contact
+              </Link>{' '}
             </li>
             <li
               style={{
@@ -142,7 +197,7 @@ const Home: NextPage = () => {
       </section>
 
       {/* Wrapper */}
-      <div id="wrapper">
+      <div id="wrapper" onClick={() => setHeaderVisible(false)}>
         {/* Main */}
         <div id="main">
           {/* One */}
@@ -255,13 +310,13 @@ const Home: NextPage = () => {
       </div>
 
       {/* Scripts */}
-      <script defer src="assets/js/jquery.min.js"></script>
+      {/* <script defer src="assets/js/jquery.min.js"></script>
       <script defer src="assets/js/jquery.scrollex.min.js"></script>
       <script defer src="assets/js/jquery.scrolly.min.js"></script>
       <script defer src="assets/js/browser.min.js"></script>
       <script defer src="assets/js/breakpoints.min.js"></script>
       <script defer src="assets/js/util.js"></script>
-      <script defer src="assets/js/main.js"></script>
+      <script defer src="assets/js/main.js"></script> */}
     </>
   );
 };
