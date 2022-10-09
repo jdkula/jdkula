@@ -115,13 +115,28 @@ projects:
 
 work:
   - name: Rockset
+    position: Software Enginering Intern
+    url: https://rockset.com
+    startDate: 2022-06-29
+    endDate: 2022-09-21
+    summary: >-
+      12-week internship of full-stack software development; had similar responsibilities
+      to a full-time employee. Implemented and augmented key product functionality as
+      requested by customers and to increase internal COGS.
+    highlights:
+      - Completed large internship project touching all parts of the internal system
+      - Designed and implemented a key augmentation of Rockset's storage layer
+      - Completed several smaller projects, including frontend and developer experience work
+      - Deployed code in all languages of Rockset's codebase.
+  - name: Rockset
     position: Software Engineering Intern
     url: https://rockset.com
     startDate: 2021-06-18
     endDate: 2021-09-18
     summary: >-
-      12-week internship of full-stack software development with guidance from
-      a mentor, plus occasional bug-fixing from the task queue
+      12-week internship of full-stack software development; implemented and
+      augmented key orchestration-layer services. Also participated in the
+      task queue.
     highlights:
       - Completed two seperate intern projects
       - Designed, implemented, and deployed monitoring and logging mechanisms within core infrastructure code.
@@ -129,7 +144,7 @@ work:
       - Helped deploy mission-critical infrastructure
       - Worked in a wide variety of languages
   - name: Stanford University
-    position: 'Teaching Assistant (Intro CS: A, AJ, AP, AX, B)'
+    position: 'Teaching Assistant (Intro CS: 106A, AJ, AP, AX, B; Systems: 107, 110)'
     startDate: 2018-01-15
     summary: >-
       Taught weekly 50-minute problem-solving sections including 7-12 students from undergraduate to Ph. D, and
