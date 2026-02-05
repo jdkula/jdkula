@@ -1,4 +1,6 @@
 onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - puppeteer
   - sharp
 
 overrides:

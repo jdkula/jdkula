@@ -3,13 +3,13 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "concurrently \"yarn:next dev\" \"yarn:watch-resume\"",
+        "dev": "concurrently \"pnpm run next dev\" \"pnpm run watch-resume\"",
         "watch-resume": "nodemon --watch lib/resume.yaml --watch ./generate_resume.mjs -e mjs,yaml,yml ./generate_resume.mjs",
-        "build": "yarn build-resume && next build",
+        "build": "pnpm run build-resume && next build",
         "build-resume": "node ./generate_resume.mjs",
         "start": "next start",
         "lint": "eslint --ext ts,tsx,js,jsx,md,mdx --no-error-on-unmatched-pattern components lib pages",
-        "export": "yarn build && next export"
+        "export": "pnpm run build && next export"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.2.0",
