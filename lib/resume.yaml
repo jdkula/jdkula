@@ -127,7 +127,6 @@ work:
       - Completed large internship project touching all parts of the internal system
       - Designed and implemented a key augmentation of Rockset's storage layer
       - Completed several smaller projects, including frontend and developer experience work
-      - Deployed code in all languages of Rockset's codebase.
   - name: Rockset
     position: Software Engineering Intern
     url: https://rockset.com
@@ -142,7 +141,6 @@ work:
       - Designed, implemented, and deployed monitoring and logging mechanisms within core infrastructure code.
       - Designed, implemented, and deployed an augmentation and significant functionality improvement to Rockset’s Kubernetes controllers.
       - Helped deploy mission-critical infrastructure
-      - Worked in a wide variety of languages
   - name: Stanford University
     position: 'Teaching Assistant (Intro CS: 106A, AJ, AP, AX, B; Systems: 107, 110)'
     startDate: 2018-01-15
@@ -151,9 +149,7 @@ work:
       held office hours. Provided feedback on student work; graded all assignments.
     highlights:
       - 'Student feedback score: 4.9/5 for responsiveness, preparedness, and helpfulness.'
-      - Recognized multiple times as an exemplar TA.
       - Served as a guest lecturer in CS106AJ.
-      - Helped co-develop the CS106AX curriculum.
 
 # languages:
 #   - language: English
