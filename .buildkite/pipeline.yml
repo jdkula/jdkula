@@ -1,4 +1,4 @@
 steps:
     - name: ':node: build'
       command:
-          - pnpm run build
+          - pnpm run build --webpack
